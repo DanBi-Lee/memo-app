@@ -1,0 +1,236 @@
+@import "reset.css";
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-width: 320px;
+  height: 100vh;
+  background: linear-gradient(
+    45deg,
+    rgba(34, 193, 195, 1) 0%,
+    rgba(45, 122, 253, 1) 100%
+  );
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+#app {
+  width: 100%;
+  max-width: 800px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+#headBox {
+  height: 60px;
+  padding: 0px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#app .memos {
+  flex: 1 1;
+  overflow: auto;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+#app .memos .memo {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+#app .memos .memo + .memo {
+  margin-top: 10px;
+}
+
+/* 이미지 */
+#app .memos .memo[data-type="image"] .memo-image {
+  width: 100%;
+  margin-bottom: 10px;
+}
+#app .memos .memo[data-type="image"] .memo-image img {
+  width: 100%;
+  height: auto;
+}
+
+/* 비디오 */
+#app .memos .memo[data-type="video"] .memo-video {
+  position: relative;
+  width: 100%;
+  margin-bottom: 10px;
+  padding-top: 56%;
+}
+
+#app .memos .memo[data-type="video"] .memo-video iframe {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+/*  텍스트 */
+#app .memos .memo .memo-title {
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+/* 할 일 리스트 */
+#app .memos .memo[data-type="task"] .memo-task li {
+  list-style: circle;
+  margin-left: 20px;
+}
+
+#footBox {
+  height: 60px;
+  padding: 0px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+#buttonAdd {
+  position: absolute;
+  bottom: 70px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(
+    45deg,
+    rgba(34, 193, 195, 1) 0%,
+    rgba(45, 122, 253, 1) 100%
+  );
+  color: #fff;
+  font-size: 24px;
+}
+
+.modal {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  left: 0px;
+  top: 0px;
+}
+
+.mdoal-dialog {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  background-color: #fff;
+  height: auto;
+  border-radius: 8px;
+  padding-top: 40px;
+}
+
+.mdoal-dialog {
+  display: flex;
+  flex-direction: column;
+}
+
+.mdoal-dialog .box-memo-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  padding: 0px 20px;
+  box-sizing: border-box;
+}
+
+.mdoal-dialog .box-memo-button button {
+  width: 25%;
+  max-width: 100px;
+  height: 40px;
+  border: 1px solid;
+  border-radius: 4px;
+  color: #999;
+  box-sizing: border-box;
+}
+
+.mdoal-dialog .box-memo-button button.active {
+  font-weight: 900;
+  border: 4px solid;
+  color: #2a8fed;
+}
+
+.mdoal-dialog .box-memo-button button + button {
+  margin-left: 10px;
+}
+
+.form-box {
+  display: flex;
+  justify-content: center;
+  flex: 1 1;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.form-box .input-item + .input-item {
+  margin-top: 10px;
+}
+
+.form-box .input-item label {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.form-box fieldset {
+  width: 100%;
+}
+
+.form-box fieldset input,
+.form-box fieldset textarea {
+  width: 100%;
+  height: 40px;
+  box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.form-box fieldset textarea {
+  height: 80px;
+}
+
+.form-box .send {
+  width: 100px;
+  height: 40px;
+  background: linear-gradient(
+    45deg,
+    rgba(34, 193, 195, 1) 0%,
+    rgba(45, 122, 253, 1) 100%
+  );
+  margin-top: 20px;
+  float: right;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.modal .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 28px;
+  height: 28px;
+  color: red;
+  border-radius: 50%;
+  line-height: 28px;
+  font-size: 16px;
+}
