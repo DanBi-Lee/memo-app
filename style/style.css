@@ -176,11 +176,15 @@ body {
 }
 
 .form-box {
-  display: flex;
+  display: none;
   justify-content: center;
   flex: 1 1;
   padding: 20px;
   box-sizing: border-box;
+}
+
+.form-box.active {
+  display: flex;
 }
 
 .form-box .input-item + .input-item {

@@ -53,34 +53,74 @@
         <!-- 모달창 -->
         <div class="modal hide">
             <section class="modal-dialog">
-                <section class="box-memo-button">
-                    <button class="active">이미지</button>
-                    <button>비디오</button>
-                    <button>텍스트</button>
-                    <button>리스트</button>
+                <section class="box-memo-button button-box">
+                    <button class="active" data-type="image">이미지</button>
+                    <button data-type="video">비디오</button>
+                    <button data-type="text">텍스트</button>
+                    <button data-type="task">할 일</button>
                 </section>
-                <form action="" class="form-box">
+                <section class="box-form">
                     <!-- 이미지 -->
-                    <fieldset>
-                        <legend class="hidden">입력</legend>
-                        <p class="input-item">
-                            <label for="">이미지 url</label>
-                            <input type="text">
-                        </p>
-                        <p class="input-item">
-                            <label for="">제목</label>
-                            <input type="text">
-                        </p>
-                        <!-- <p class="input-item">
-                            <label for="">내용</label>
-                            <textarea name="" id=""></textarea>
-                        </p> -->
-                        <button type="submit" class="send" >작성</button>
-                    </fieldset>
+                    <form action="" class="form-box active">
+                        <fieldset class="active">
+                            <legend class="hidden">입력</legend>
+                            <p class="input-item">
+                                <label for="">이미지 url</label>
+                                <input type="text">
+                            </p>
+                            <p class="input-item">
+                                <label for="">제목</label>
+                                <input type="text">
+                            </p>
+                            <button type="submit" class="send" >작성</button>
+                        </fieldset>
+                    </form>
                     <!-- 비디오 -->
+                    <form action="" class="form-box">
+                        <fieldset class="active">
+                            <legend class="hidden">입력</legend>
+                            <p class="input-item">
+                                <label for="">비디오 url</label>
+                                <input type="text">
+                            </p>
+                            <p class="input-item">
+                                <label for="">제목</label>
+                                <input type="text">
+                            </p>
+                            <button type="submit" class="send" >작성</button>
+                        </fieldset>
+                    </form>
                     <!-- 텍스트 -->
+                    <form action="" class="form-box">
+                        <fieldset class="active">
+                            <legend class="hidden">입력</legend>
+                            <p class="input-item">
+                                <label for="">제목</label>
+                                <input type="text">
+                            </p>
+                            <p class="input-item">
+                                <label for="">내용</label>
+                                <input type="text">
+                            </p>
+                            <button type="submit" class="send" >작성</button>
+                        </fieldset>
+                    </form>
                     <!-- 할 일 -->
-                </form>
+                    <form action="" class="form-box">
+                        <fieldset class="active">
+                            <legend class="hidden">입력</legend>
+                            <p class="input-item">
+                                <label for="">제목</label>
+                                <input type="text">
+                            </p>
+                            <p class="input-item">
+                                <label for="">할 일</label>
+                                <input type="text">
+                            </p>
+                            <button type="submit" class="send" >작성</button>
+                        </fieldset>
+                    </form>
+                </section>
                 <button class="close">
                     <i class="fas fa-times"></i>
                     <span class="hidden">닫기</span>
