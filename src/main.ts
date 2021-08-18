@@ -27,3 +27,11 @@ formBox?.addEventListener('click', e => {
     
     memo.addMemo(memoData);
 });
+memo.memoBox?.addEventListener('click', e => {
+    const target = e.target as HTMLElement;
+    if(!target.closest('.remove')){
+        return;
+    }
+    const $memo = target.closest('.memo') as HTMLElement;
+    memo.removeMemo($memo);
+});

@@ -11,6 +11,7 @@ type MemoType = {
 interface MemoInterface {
     memos : MemoType[];
     addMemo : (memo:MemoType) => void;
+    removeMemo : (memo:HTMLElement)=>void;
 }
 
 export default class Memo implements MemoInterface {
@@ -21,7 +22,6 @@ export default class Memo implements MemoInterface {
         this.memos = [];
         this.memoBox = document.querySelector(memoBoxSelector);
     }
-
     addMemo(memo:MemoType){
         let template;
         const {type} = memo;
@@ -92,6 +92,17 @@ export default class Memo implements MemoInterface {
         article.setAttribute('data-type', type);
         article.classList.add('memo');
         article.innerHTML = template;
+        const removeButton = document.createElement('button');
+        removeButton.innerHTML = `
+            <i class="fas fa-times"></i>
+            <span class="hidden">삭제</span>
+        `;
+        removeButton.classList.add('remove');
+        article.append(removeButton);
         return article;
+    }
+
+    removeMemo(memo:HTMLElement){
+        memo.remove();
     }
 }

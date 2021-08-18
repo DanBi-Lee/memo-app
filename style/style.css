@@ -44,6 +44,7 @@ body {
 }
 
 #app .memos .memo {
+  position: relative;
   background-color: #fff;
   padding: 20px;
   border-radius: 4px;
@@ -52,6 +53,16 @@ body {
 
 #app .memos .memo + .memo {
   margin-top: 10px;
+}
+
+#app .memos .memo .remove{
+  position : absolute;
+  width: 20px;
+  height: 20px;
+  top: 0px;
+  right: 0px;
+  color: red;
+  background-color: transparent;
 }
 
 /* 이미지 */
